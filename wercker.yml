@@ -4,6 +4,9 @@ build:
     - script:
       name: set locale
       code: |
+        cat /etc/environment
+        echo "LANG=en_US.utf-8" >> /etc/environment
+        echo "LC_ALL=en_US.utf-8" >> /etc/environment
         echo "export LC_ALL=en_US.utf8" >> ~/.profile
         echo "export LC_ALL=en_US.utf8" >> ~/.bashrc
         echo "export LANG=en_US.utf8" >> ~/.profile
