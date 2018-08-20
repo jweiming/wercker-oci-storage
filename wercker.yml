@@ -5,11 +5,11 @@ build:
       name: set locale
       code: |
         #locale
-        sudo yum reinstall -y glibc-common
-        sudo localedef -i en_US -f UTF-8 en_US.UTF-8
-        export LANG=C.UTF-8
-        export LC_ALL=C.UTF-8
-        locale
+        #sudo yum reinstall -y glibc-common
+        #sudo localedef -i en_US -f UTF-8 en_US.UTF-8
+        #export LANG=C.UTF-8
+        #export LC_ALL=C.UTF-8
+        #locale
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
