@@ -4,7 +4,7 @@ build:
     - script:
       name: set locale
       code: |
-        sudo cat /etc/environment
+        localedef -i en_US -f UTF-8 en_US.UTF-8
         sudo echo "LANG=en_US.utf-8" >> /etc/environment
         sudo echo "LC_ALL=en_US.utf-8" >> /etc/environment
         echo "export LC_ALL=en_US.utf8" >> ~/.profile
