@@ -4,12 +4,12 @@ build:
     - script:
       name: set locale
       code: |
-        echo "export LC_ALL=en_US.UTF-8" >> ~/.profile
-        echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
-        echo "export LANG=en_US.UTF-8" >> ~/.profile
-        echo "export LANG=en_US.UTF-8" >> ~/.bashrc
-        echo "export LANGUAGE=en_US.UTF-8" >> ~/.profile
-        echo "export LANGUAGE=en_US.UTF-8" >> ~/.bashrc
+        echo "export LC_ALL=C.UTF-8" >> ~/.profile
+        echo "export LC_ALL=C.UTF-8" >> ~/.bashrc
+        echo "export LANG=C.UTF-8" >> ~/.profile
+        echo "export LANG=C.UTF-8" >> ~/.bashrc
+        echo "export LANGUAGE=C.UTF-8" >> ~/.profile
+        echo "export LANGUAGE=C.UTF-8" >> ~/.bashrc
         source ~/.bashrc
         locale
     - wercker/oci-objectstore@1.2.0:
