@@ -6,6 +6,7 @@ build:
       code: |
         export LANG=en_US.UTF-8
         locale
+        ls -al /usr/share/i18n/charmaps
     - magyarjeti/locale@0.0.2:
       charset: en_US
       locale:  UTF-8 
