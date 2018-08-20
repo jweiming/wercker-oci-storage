@@ -1,5 +1,5 @@
 build:
-  box: oraclelinux:7-slim
+  box: oraclelinux:7
   steps:
     - script:
       name: set locale
