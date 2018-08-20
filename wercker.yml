@@ -5,6 +5,7 @@ build:
       name: set locale
       code: |
         #locale
+        sudo yum reinstall -y glibc-common
         sudo localedef -i en_US -f UTF-8 en_US.UTF-8
         export LANG=C.UTF-8
         export LC_ALL=C.UTF-8
