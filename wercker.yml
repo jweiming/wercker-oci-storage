@@ -1,5 +1,5 @@
 build:
-  box: ubuntu-slim
+  box: ubuntu
   steps:
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
