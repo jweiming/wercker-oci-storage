@@ -4,7 +4,8 @@ build:
     - script:
       name: set locale
       code: |
-        localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
+        locale
+        sudo locale-gen "en_US.UTF-8"
         #echo "export LC_ALL=en_US.utf8" >> ~/.profile
         #echo "export LC_ALL=en_US.utf8" >> ~/.bashrc
         #echo "export LANG=en_US.utf8" >> ~/.profile
