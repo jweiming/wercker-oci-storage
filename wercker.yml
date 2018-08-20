@@ -4,12 +4,9 @@ build:
     - script:
       name: set locale
       code: |
-        export LANG=en_US.UTF-8
+        echo "export LANG=en_US.UTF-8" >> /etc/profile 
+        souce /etc/profile
         locale
-        ls -al /usr/share/i18n/charmaps
-    - magyarjeti/locale@0.0.2:
-      charset: en_US
-      locale:  UTF-8 
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
