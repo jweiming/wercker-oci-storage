@@ -1,4 +1,4 @@
-build
+build:
   box: oraclelinux:7-slim
   steps:
     - script:
