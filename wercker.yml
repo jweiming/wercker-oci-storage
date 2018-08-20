@@ -4,8 +4,9 @@ build:
     - script:
       name: set locale
       code: |
-        echo 'export LANG=en_US.UTF-8' >> /etc/profile 
-        souce /etc/profile
+        echo "hello"
+        echo "export LANG=en_US.UTF-8" >> /etc/profile 
+        source /etc/profile
         locale
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
