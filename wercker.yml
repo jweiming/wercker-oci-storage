@@ -4,8 +4,13 @@ build:
     - script:
       name: set locale
       code: |
-        echo "export LL_ALL=en_US.UTF-8 | LANG=en_US.UTF-8" >> /etc/profile 
-        source /etc/profile
+        echo "export LC_ALL=en_US.UTF-8" >> ~/.profile
+        echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
+        echo "export LANG=en_US.UTF-8" >> ~/.profile
+        echo "export LANG=en_US.UTF-8" >> ~/.bashrc
+        echo "export LANGUAGE=en_US.UTF-8" >> ~/.profile
+        echo "export LANGUAGE=en_US.UTF-8" >> ~/.bashrc
+        source ~/.bashrc
         locale
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
