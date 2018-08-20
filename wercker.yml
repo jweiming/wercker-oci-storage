@@ -4,6 +4,7 @@ build:
     - script:
       name: set locale
       code: |
+        yum install -y locales
         locale-gen en_US.UTF-8
         export LANG=en_US.UTF-8 LANGUAGE=en_US.en LC_ALL=en_US.UTF-8
         locale
