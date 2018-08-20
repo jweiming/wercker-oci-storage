@@ -4,16 +4,16 @@ build:
     - script:
       name: set locale
       code: |
-        locale
+        #locale
         yum reinstall -y glibc-common
-        sudo sh -c "echo 'LC_ALL=en_US.UTF-8\nLANG=en_US.UTF-8' >> /etc/environment
-        echo "export LC_ALL=en_US.utf8" >> ~/.profile
-        echo "export LC_ALL=en_US.utf8" >> ~/.bashrc
-        echo "export LANG=en_US.utf8" >> ~/.profile
-        echo "export LANG=en_US.utf8" >> ~/.bashrc
-        echo "export LANGUAGE=en_US.utf8" >> ~/.profile
-        echo "export LANGUAGE=en_US.utf8" >> ~/.bashrc
-        source ~/.bashrc
+        sh -c "echo -e 'LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8' > /etc/default/locale"
+        #echo "export LC_ALL=en_US.utf8" >> ~/.profile
+        #echo "export LC_ALL=en_US.utf8" >> ~/.bashrc
+        #echo "export LANG=en_US.utf8" >> ~/.profile
+        #echo "export LANG=en_US.utf8" >> ~/.bashrc
+        #echo "export LANGUAGE=en_US.utf8" >> ~/.profile
+        #echo "export LANGUAGE=en_US.utf8" >> ~/.bashrc
+        #source ~/.bashrc
         locale
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
