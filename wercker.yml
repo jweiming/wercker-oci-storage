@@ -1,12 +1,6 @@
 build:
   box: oraclelinux:7-slim
   steps:
-    - script:
-      name: set locale
-      code: |
-        #set the locale
-        locale-gen en_US.UTF-8
-        export LANG=en_US.UTF-8 LANGUAGE=en_US.en LC_ALL=en_US.UTF-8
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
