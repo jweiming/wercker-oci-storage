@@ -1,11 +1,11 @@
 build:
-  box: oraclelinux:6
+  box: oraclelinux:7
   steps:
     - script:
       name: set locale
       code: |
         locale
-        sudo locale-gen "en_US.UTF-8"
+        yum reinstall -y glibc-common
         #echo "export LC_ALL=en_US.utf8" >> ~/.profile
         #echo "export LC_ALL=en_US.utf8" >> ~/.bashrc
         #echo "export LANG=en_US.utf8" >> ~/.profile
