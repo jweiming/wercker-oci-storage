@@ -3,7 +3,10 @@ build:
   steps:
     - script:
       name: Set API_KEY file
-      code:  echo -ne "-----BEGIN RSA PRIVATE KEY-----\n$OCI_API_KEY\n-----END RSA PRIVATE KEY-----" > api-key.pem
+      code:  |
+         export API=$OCI_API_KEY
+         export API_KEY=$(API | tr " " "\n")
+         echo -ne "-----BEGIN RSA PRIVATE KEY-----\n$API_KEY\n-----END RSA PRIVATE KEY-----" > api-key.pem
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
