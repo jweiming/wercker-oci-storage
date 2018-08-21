@@ -2,12 +2,12 @@ build:
   box: ubuntu
   steps:
     - wercker/oci-objectstore@1.2.0:
-      region:       $OCI_REGION
-      tenancy-ocid: $OCID_TENANCY
-      user-ocid:    $OCID_USER
-      fingerprint:  $OCI_FINGERPRINT
-      api-key:      $OCI_API_KEY
-      namespace:    $OCI_NAMESPACE
-      bucket-name:  $OCI_BUCKETNAME
+      region:       OCI_REGION
+      tenancy-ocid: OCID_TENANCY
+      user-ocid:    OCID_USER
+      fingerprint:  OCI_FINGERPRINT
+      api-key:      OCI_API_KEY
+      namespace:    OCI_NAMESPACE
+      bucket-name:  OCI_BUCKETNAME
       command:      get
       object-name:  kubeconfig
