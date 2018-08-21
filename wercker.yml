@@ -5,7 +5,7 @@ build:
       name: Set API_KEY file
       code:  |
          #echo -ne "-----BEGIN RSA PRIVATE KEY-----\n" > api.pem
-         cat $OCI_API_KEY | tr " " "\n"
+         cat $OCI_API_KEY
          #echo -ne "-----END RSA PRIVATE KEY-----\n" >> api.pem
          #echo -ne $(cat api.pem)
     - wercker/oci-objectstore@1.2.0:
