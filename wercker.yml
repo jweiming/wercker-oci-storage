@@ -3,16 +3,13 @@ build:
   steps:
     - script:
       name: Set API_KEY into variable
-      code: export API_KEY_V=$OCI_API_KEY
-    - script:
-      name: check variable
-      code: echo "$API_KEY_V"
+      code: echo $OCI_API_KEY >> test.pem
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
       user-ocid:    $OCID_USER
       fingerprint:  $OCI_FINGERPRINT
-      api-key:      $OCI_API_KEY
+      api-key:      "$(cat test.pem)"
       namespace:    $OCI_NAMESPACE
       bucket-name:  $OCI_BUCKETNAME
       command:      get
