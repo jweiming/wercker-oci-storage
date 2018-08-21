@@ -4,9 +4,6 @@ build:
     - script:
       name: Set API_KEY into variable
       code: echo "$OCI_API_KEY" > test.pem
-    - script:
-      name: check file
-      code: cat test.pem
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
@@ -17,3 +14,7 @@ build:
       bucket-name:  $OCI_BUCKETNAME
       command:      get
       object-name:  kubeconfig
+    - wercker/kubectl@3.9.0:
+      raw-args:     --kubeconfig=kubeconfig
+      command:      get nodes
+    
