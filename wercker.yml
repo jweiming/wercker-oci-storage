@@ -4,10 +4,10 @@ build:
     - script:
       name: Set API_KEY file
       code:  |
-         echo -ne "-----BEGIN RSA PRIVATE KEY-----\n" > api.pem
-         echo -ne "$(cat $OCI_API_KEY | tr " " "\n")" >> api.pem
-         echo -ne "-----END RSA PRIVATE KEY-----\n" >> api.pem
-         echo -ne $(cat api.pem)
+         $echo -ne "-----BEGIN RSA PRIVATE KEY-----\n" > api.pem
+         echo -ne $(cat $OCI_API_KEY | tr " " "\n")
+         $echo -ne "-----END RSA PRIVATE KEY-----\n" >> api.pem
+         $echo -ne $(cat api.pem)
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
