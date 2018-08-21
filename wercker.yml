@@ -7,7 +7,7 @@ build:
          echo -ne "-----BEGIN RSA PRIVATE KEY-----\n" > api.pem
          echo -ne $OCI_API_KEY | tr " " "\n" >> api.pem
          echo -ne "-----END RSA PRIVATE KEY-----\n" >> api.pem
-         echo $(cat api.pem)
+         echo "$(cat api.pem)"
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
       tenancy-ocid: $OCID_TENANCY
