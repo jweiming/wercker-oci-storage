@@ -6,7 +6,7 @@ build:
       tenancy-ocid: $OCID_TENANCY
       user-ocid:    $OCID_USER
       fingerprint:  $OCI_FINGERPRINT
-      api-key:      "$OCI_API_KEY"
+      api-key:      $OCI_API_KEY
       namespace:    $OCI_NAMESPACE
       bucket-name:  $OCI_BUCKETNAME
       command:      get
