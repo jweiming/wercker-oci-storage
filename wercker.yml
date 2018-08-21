@@ -17,8 +17,10 @@ build:
       namespace:    $OCI_NAMESPACE
       bucket-name:  $OCI_BUCKETNAME
       command:      get
-      object-name:  kubeconfig
+      object-name:  config-phoenix
+    - script:
+      name: Set kubeconfig variable
+      code: export KUBECONFIG=config-phoenix
     - wercker/kubectl@3.9.0:
-      raw-args:     --kubeconfig=kubeconfig
       command:      get nodes
     
