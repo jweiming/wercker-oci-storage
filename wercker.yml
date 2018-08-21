@@ -1,3 +1,7 @@
+# to input the api-key into environment variable
+# use echo $(cat oci_api_key.pem)
+# remove the "-----BEGIN RSA PRIVATE KEY-----" and "-----END RSA PRIVATE KEY-----"
+
 build:
   box: ubuntu
   steps:
