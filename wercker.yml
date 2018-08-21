@@ -5,7 +5,8 @@ build:
       name: Set API_KEY file
       code:  |
          export API=$OCI_API_KEY
-         export API_KEY=$(API | tr " " "\n")
+         export API_KEY=($API | tr ' ' '\n')
+         echo $API_KEY
          echo -ne "-----BEGIN RSA PRIVATE KEY-----\n$API_KEY\n-----END RSA PRIVATE KEY-----" > api-key.pem
     - wercker/oci-objectstore@1.2.0:
       region:       $OCI_REGION
